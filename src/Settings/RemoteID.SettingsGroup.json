@@ -1,0 +1,13 @@
+{
+    "version":              1,
+    "fileType":             "FactMetaData",
+    "QGC.MetaData.Facts":
+[
+{
+    "name":         "enable",
+    "shortDesc":    "Show Drone ID settings page when enabled",
+    "type":         "bool",
+    "default":      false
+}
+]
+}
