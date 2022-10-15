@@ -149,6 +149,15 @@
         <file alias="PX4/BrandImage">src/FirmwarePlugin/PX4/PX4BrandImage.png</file>
         <file alias="Quad.svg">src/ui/toolbar/Images/Quad.svg</file>
         <file alias="RadioComponentIcon.png">src/AutoPilotPlugins/Common/Images/RadioComponentIcon.png</file>
+        <file alias="RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg">src/ui/toolbar/Images/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg</file>
+        <file alias="RID_EMERGENCY_BACKGROUND_SVG.svg">src/ui/toolbar/Images/RID_EMERGENCY_BACKGROUND_SVG.svg</file>
+        <file alias="RID_FLAG_BACKGROUND_GREEN_SVG.svg">src/ui/toolbar/Images/RID_FLAG_BACKGROUND_GREEN_SVG.svg</file>
+        <file alias="RID_FLAG_BACKGROUND_GREY_SVG.svg">src/ui/toolbar/Images/RID_FLAG_BACKGROUND_GREY_SVG.svg</file>
+        <file alias="RID_FLAG_BACKGROUND_RED_SVG.svg">src/ui/toolbar/Images/RID_FLAG_BACKGROUND_RED_SVG.svg</file>
+        <file alias="RID_ICON_GREEN_SVG.svg">src/ui/toolbar/Images/RID_ICON_GREEN_SVG.svg</file>
+        <file alias="RID_ICON_GREY_SVG.svg">src/ui/toolbar/Images/RID_ICON_GREY_SVG.svg</file>
+        <file alias="RID_ICON_RED_SVG.svg">src/ui/toolbar/Images/RID_ICON_RED_SVG.svg</file>
+        <file alias="RID_ICON_YELLOW_SVG.svg">src/ui/toolbar/Images/RID_ICON_YELLOW_SVG.svg</file>
         <file alias="RC.svg">src/ui/toolbar/Images/RC.svg</file>
         <file alias="RCLoss.svg">src/AutoPilotPlugins/PX4/Images/RCLoss.svg</file>
         <file alias="RCLossLight.svg">src/AutoPilotPlugins/PX4/Images/RCLossLight.svg</file>
