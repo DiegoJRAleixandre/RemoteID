@@ -94,6 +94,13 @@ Item {
         return RemoteIDIndicator.RIDState.HEALTHY
     }
 
+    function goToSettings() {
+        if (!mainWindow.preventViewSwitch()) {
+            globals.commingFromRIDIndicator = true
+            mainWindow.showSettingsTool()
+        }
+    }
+
     Component {
         id: remoteIDInfo
 
@@ -143,6 +150,11 @@ Item {
                             font.bold:              true
                             font.pointSize:         ScreenTools.smallFontPointSize
                         }
+
+                        QGCMouseArea {
+                            anchors.fill:   parent
+                            onClicked:      goToSettings()
+                        }
                     }
 
                     Image {
@@ -161,6 +173,11 @@ Item {
                             verticalAlignment:      Text.AlignVCenter
                             font.bold:              true
                             font.pointSize:         ScreenTools.smallFontPointSize
+                        }
+
+                        QGCMouseArea {
+                            anchors.fill:   parent
+                            onClicked:      goToSettings()
                         }
                     }
                     
@@ -230,6 +247,11 @@ Item {
                             font.bold:              true
                             font.pointSize:         ScreenTools.smallFontPointSize
                         }
+
+                        QGCMouseArea {
+                            anchors.fill:   parent
+                            onClicked:      goToSettings()
+                        }
                     }
                 }
             }
@@ -296,14 +318,25 @@ Item {
                         id:             emergencyButtonTimer
                         interval:       350
                         onTriggered: {
-                            emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_SVG.svg"
+                            if (emergencyButton.source == "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg" ) {
+                                emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_SVG.svg"
+                            } else {
+                                emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg"
+                            }
                         }
                     }
 
                     MouseArea {
                         anchors.fill:   parent
+                        hoverEnabled:   true
+                        onEntered:      emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg"
+                        onExited:       emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_SVG.svg"
                         onPressAndHold: {
-                            emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg"
+                            if (emergencyButton.source == "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg" ) {
+                                emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_SVG.svg"
+                            } else {
+                                emergencyButton.source = "/qmlimages/RID_EMERGENCY_BACKGROUND_HIGHLIGHT_SVG.svg"
+                            }
                             emergencyButtonTimer.restart()
                             if (_activeVehicle) {
                                 _activeVehicle.remoteIDManager.declareEmergency()
